@@ -1,10 +1,9 @@
-function [mdot_lbm] = solveGas_mdot(P_up,T_up,P_d,CdA,fluid,FlowType)
-%function [mdot_lbm] = solveGas_mdot(14.7,70,250,.99,oxygen,1);
-% Written by: Kevin Dille 04/24/2021
-% Function determines the mass flow rate of a gas accounting for real gas
-% effects for sonic and subsonic flow.
+function [P_up] = solveGas_Pup(CdA,T_up,P_d,mdot_lbm,fluid,FlowType)
+% Written by: Ethan Labianca-Campbell
+% Function determines the upstream pressure required for a fluid to achieve
+% a provided mass flow rate through a given area (CdA).
 % 
-% Modified by: Kevin Dille 03/14/2022
+% Modified by: Ethan Labianca-Campbell 08/01/2025
 % Function can now handle both injectors and venturis with the "FlowType"
 % variable. Venturi calculations allow for replacing the "Sonicmdot"
 % function
@@ -56,4 +55,5 @@ elseif FlowType == 2 % Injector Mass Flow rate
 end
 
 mdot_lbm = mdot_kg*2.20462; %[lbm/s]
+
 end
