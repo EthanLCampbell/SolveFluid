@@ -1,4 +1,4 @@
-function [P_up] = solveGas_Pup(CdA,T_up,P_d,mdot_lbm,fluid,FlowType)
+function [P_up] = solveGas_mdot(CdA,T_up,P_d,mdot_lbm,fluid,FlowType)
 % Written by: Ethan Labianca-Campbell
 % Function determines the upstream pressure required for a fluid to achieve
 % a provided mass flow rate through a given area (CdA).
@@ -57,3 +57,4 @@ end
 mdot_lbm = mdot_kg*2.20462; %[lbm/s]
 
 end
+
