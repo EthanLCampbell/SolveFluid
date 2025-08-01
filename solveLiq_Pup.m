@@ -1,10 +1,9 @@
 function [P_up] = solveLiq_Pup(CdA,T_up,P_d,mdot_lbm,fluid,FlowType)
-% Written by: Kevin Dille 04/24/2021
-% Edited by: Charlie Black 7/24/2022
+% Written by: Ethan Labianca-Campbell
 % Function determines the upstream pressure required for a fluid to achieve
 % a provided mass flow rate through a given area (CdA).
 % 
-% Modified by: Kevin Dille 03/14/2022
+% Modified by: Ethan Labianca-Campbell 08/01/2025
 % Function can now handle both venturis and injector-like flow with the
 % "FlowType" variable.
 % 
@@ -66,4 +65,5 @@ while abs(mdot_dif) > mdot_tol
 end
 
 P_up = P_up_guess; %[psi]
+
 end
