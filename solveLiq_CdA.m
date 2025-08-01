@@ -1,10 +1,9 @@
-function [CdA] = solveLiq_CdA(P_up,T_up,P_d,mdot,fluid,FlowType)
-
-% Written by: Kevin Dille 07/17/2021
-% Function determines the area (CdA including discharge coefficient
-% effects) of a fluid for a given mass flow rate and upstream conditions.
-%
-% Modified by: Kevin Dille 03/14/2021
+function [P_up] = solveLiq_CdA(CdA,T_up,P_d,mdot_lbm,fluid,FlowType)
+% Written by: Ethan Labianca-Campbell
+% Function determines the upstream pressure required for a fluid to achieve
+% a provided mass flow rate through a given area (CdA).
+% 
+% Modified by: Ethan Labianca-Campbell 08/01/2025
 % Function now differentiates between cavitating venturis and dP injectors
 % with the "FlowType" variable to be able to solve CdA for both injectors 
 % and venturis. Venturi assumes 80% pressure recovery.
@@ -48,5 +47,6 @@ elseif FlowType == 2 % Injector
 end
 CdA_m = mdot_kg/(rho_inj*vel_inj); %[m^2]
 CdA = CdA_m*(39.37^2); %[in^2]
+
 
 end
