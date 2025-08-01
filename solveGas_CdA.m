@@ -1,9 +1,9 @@
 function [CdA] = solveGas_CdA(P_up,T_up,P_d,mdot,fluid,FlowType)
-% Written by: Kevin Dille 04/24/2021
+% Written by: Ethan Labianca-Campbell
 % Function determines the area (CdA including discharge coefficient
 % effects) of a fluid for a given mass flow rate and upstream conditions.
 % 
-% Modified by: Kevin Dille 03/14/2022
+% Modified by: Ethan Labianca-Campbell 08/01/2025
 % Function works for both injectors and venturis now.
 %
 % INPUTS:
@@ -56,6 +56,7 @@ elseif FlowType == 2 % Injector/Oriface CdA Calculation
 end
 
 CdA = CdA_m*(39.37^2); %[in^2]
+
 
 
 end
