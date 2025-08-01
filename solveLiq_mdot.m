@@ -1,9 +1,9 @@
 function [mdot_lbm] = solveLiq_mdot(P_up,T_up,P_d,CdA,fluid,FlowType)
-% Written by: Kevin Dille 04/24/2021
-% Function determines the mass flow rate of a gas accounting for real gas
-% effects for sonic and subsonic flow.
+% Written by: Ethan Labianca-Campbell
+% Function determines the upstream pressure required for a fluid to achieve
+% a provided mass flow rate through a given area (CdA).
 % 
-% Modified by: Kevin Dille 03/14/2022
+% Modified by: Ethan Labianca-Campbell 08/01/2025
 % Function can now solve mass flow through an injector or cavitating
 % venturi through the use of the "FlowType" variable
 % 
@@ -47,4 +47,5 @@ end
 mdot_kg = rho_m*vel_inj*CdA_m; %[kg/s]
 
 mdot_lbm = mdot_kg*2.20462; %[lbm/s]
+
 end
